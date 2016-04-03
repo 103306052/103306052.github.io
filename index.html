@@ -1,5 +1,21 @@
 <html>
   <head>
+    <script>
+    var API_PATH = "http://opendata.khcc.gov.tw/public/OD_art_program.ashx";
+
+    function getData(cb) {
+      $.ajax({
+        url : API_PATH,
+        method : "GET",
+        success : function(data) {
+          cb(null, data);
+        },
+        error : function(err) {
+        cb(err);
+        }
+      });
+    }
+    </script>
     <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/lodash/4.6.1/lodash.min.js"></script>
     <!-- Latest compiled and minified CSS -->
